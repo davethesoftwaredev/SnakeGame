@@ -1,0 +1,23 @@
+<html>
+<head>
+	<link rel="stylesheet" href="css/snake.css" />
+
+	<script type="text/javascript" src="js/snake.js"></script>
+	<script type="text/javascript" src="js/snake-grid.js"></script>
+	<script type="text/javascript" src="js/snake-images.js"></script>
+	<script type="text/javascript" src="js/snake-level.js"></script>
+	<script type="text/javascript">
+		window.gameLoop = function() {
+			Snake.drawGrid();
+			setTimeout(window.gameLoop, 0);
+		}
+	
+		window.onload = function() {
+			Snake.init('game-screen', 0, window.gameLoop);
+		};
+	</script>
+</head>
+<body>
+	<canvas id="game-screen" width="800" height="600"></canvas>
+</body>
+</html>
